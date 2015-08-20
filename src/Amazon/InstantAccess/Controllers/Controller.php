@@ -93,7 +93,7 @@ abstract class Controller
             Logger::getLogger()->debug(sprintf('Request: %s', (string)$this->request));
 
             // verify the request againts the credential store
-            if (!$this->signer->verify($this->request, $this->credentialStore)) {
+            if (!$this->verifySigner($this->request, $this->credentialStore)) {
                 throw new \Exception('Request validation failed.');
             }
 
@@ -132,5 +132,10 @@ abstract class Controller
         restore_error_handler();
 
         return $response;
+    }
+
+    public function verifySigner($request, $credentialStore)
+    {
+        return $this->signer->verify($request, $credentialStore);
     }
 }
