@@ -32,7 +32,7 @@ use Amazon\InstantAccess\Utils\HttpUtils;
 abstract class Controller
 {
     /** @var Request */
-    protected $request;
+    public $request;
     /** @var Signer */
     protected $signer;
 

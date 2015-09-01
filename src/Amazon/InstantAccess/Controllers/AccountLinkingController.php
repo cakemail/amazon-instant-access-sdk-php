@@ -44,7 +44,7 @@ class AccountLinkingController extends Controller
         $this->getUserIdCallback = $callback;
     }
 
-    protected function processOperation($operation)
+    public function processOperation($operation)
     {
         switch ($operation) {
             case InstantAccessOperationValue::GET_USER_ID:
