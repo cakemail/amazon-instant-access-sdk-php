@@ -91,7 +91,7 @@ class PurchaseController extends Controller
         $this->subscriptionDeactivateCallback = $callback;
     }
 
-    protected function processOperation($operation)
+    public function processOperation($operation)
     {
         switch ($operation) {
             case InstantAccessOperationValue::PURCHASE:
